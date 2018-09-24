@@ -66,8 +66,8 @@ int main(int argc, char **argv) {
     fprintf(fp, "   #error configuration mismatch, invalid USE_COMB. Try deleting ecmult_static_context.h before the build.\n");
     fprintf(fp, "#endif\n");
 #if USE_COMB
-    fprintf(fp, "#if COMB_BLOCKS != %i || COMB_TEETH != %i || COMB_SPACING != %i\n", COMB_BLOCKS, COMB_TEETH, COMB_SPACING);
-    fprintf(fp, "   #error configuration mismatch, invalid COMB_BLOCKS, COMB_TEETH, or COMB_SPACING. Try deleting ecmult_static_context.h before the build.\n");
+    fprintf(fp, "#if COMB_BLOCKS != %i || COMB_TEETH != %i || COMB_SPACING != %i || COMB_NEGATION != %i\n", COMB_BLOCKS, COMB_TEETH, COMB_SPACING, COMB_NEGATION);
+    fprintf(fp, "   #error configuration mismatch, invalid COMB_BLOCKS, COMB_TEETH, COMB_SPACING, or COMB_NEGATION. Try deleting ecmult_static_context.h before the build.\n");
     fprintf(fp, "#endif\n");
 #else
     fprintf(fp, "#if ECMULT_GEN_PREC_N != %d || ECMULT_GEN_PREC_G != %d\n", ECMULT_GEN_PREC_N, ECMULT_GEN_PREC_G);
