@@ -11,7 +11,7 @@ cache:
   - src/java/guava/
 env:
   global:
-    - FIELD=auto  BIGNUM=auto  SCALAR=auto  ENDOMORPHISM=no  STATICPRECOMPUTATION=yes  ECMULTGENPRECISION=auto  ASM=no  BUILD=check  EXTRAFLAGS=  HOST=  ECDH=no  RECOVERY=no  EXPERIMENTAL=no  JNI=no
+    - FIELD=auto  BIGNUM=auto  SCALAR=auto  ENDOMORPHISM=no  STATICPRECOMPUTATION=yes  ECMULTGENBLOCKS=auto  ECMULTGENTEETH=auto  ASM=no  BUILD=check  EXTRAFLAGS=  HOST=  ECDH=no  RECOVERY=no  EXPERIMENTAL=no  JNI=no
     - GUAVA_URL=https://search.maven.org/remotecontent?filepath=com/google/guava/guava/18.0/guava-18.0.jar GUAVA_JAR=src/java/guava/guava-18.0.jar
   matrix:
     - SCALAR=32bit    RECOVERY=yes
@@ -30,8 +30,9 @@ env:
     - EXTRAFLAGS=CPPFLAGS=-DDETERMINISTIC
     - EXTRAFLAGS=CFLAGS=-O0
     - BUILD=check-java JNI=yes ECDH=yes EXPERIMENTAL=yes
-    - ECMULTGENPRECISION=2
-    - ECMULTGENPRECISION=8
+    - ECMULTGENBLOCKS=256 ECMULTGENTEETH=1
+    - ECMULTGENBLOCKS=43 ECMULTGENTEETH=6
+    - ECMULTGENBLOCKS=1 ECMULTGENTEETH=1
 matrix:
   fast_finish: true
   include:
