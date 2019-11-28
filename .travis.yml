@@ -35,6 +35,9 @@ env:
 matrix:
   fast_finish: true
   include:
+    - compiler: gcc
+      env: HOST=s390x-unknown-linux-gnu DOCKER_NAME_TAG=s390x/ubuntu:18.04
+      arch: s390x
     - compiler: clang
       env: HOST=i686-linux-gnu ENDOMORPHISM=yes
       addons:
